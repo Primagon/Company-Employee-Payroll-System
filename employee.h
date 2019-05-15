@@ -15,14 +15,19 @@ class Employee
         const string &LastName, 
         string ContactInfo,
         int EmployeeID,
-        int GrossPay,
+        int GrossPay
         );
-    
+        
+    void shift_to_root( );
+    void shift_up( );
+    void shift_left( );
+    void shift_right( );
+
+
     private:
     string EmployeeTitle;
     string EmployeeName;
     int EmployeeID;
-
 
 };
 #endif
