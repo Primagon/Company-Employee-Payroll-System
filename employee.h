@@ -3,6 +3,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<cstdlib>
 using namespace std;
 
 class Employee
@@ -13,8 +14,15 @@ class Employee
         const string &FirstName, 
         const string &LastName, 
         string ContactInfo,
-        int EmployeeID;
+        int EmployeeID,
+        int GrossPay,
         );
     
-    private: 
-}
+    private:
+    string EmployeeTitle;
+    string EmployeeName;
+    int EmployeeID;
+
+
+};
+#endif
