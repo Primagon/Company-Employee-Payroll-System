@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.0)
+project(employee_payroll)
+set(SOURCE main.cpp)
+add_executable(main main.cpp)
+set(HEADER_FILES ceo.h departmenth.h employee.h manager.h)
