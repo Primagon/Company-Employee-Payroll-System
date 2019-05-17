@@ -17,15 +17,9 @@ class Employee
 
     string GetJobTtile();
     string GetName();
-    /* Don't think I should implement it here.
-    Should be in employee.cpp
-    {
-        return EmployeeName;
-    }
-    */
     string GetContactInfo();
     int GetEmployeeID();
-    string GetGrossPay();
+    int GetGrossPay();
     string getName();
 
         
@@ -50,6 +44,7 @@ class Employee
 
 
     private:
+
     string EmployeeTitle;
     string EmployeeName;
     int EmployeeID;

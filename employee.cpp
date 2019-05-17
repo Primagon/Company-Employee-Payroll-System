@@ -6,12 +6,12 @@
 using namespace std;
 
 Employee::Employee(string JobTitle, char FirstInitial, string LastName,
-int EmployeeID, int GrossPay){
+int EmployeeID, int eSalary){
     this->EmployeeTitle = JobTitle;
     this->eFirstInitial = FirstInitial;
     this->eLastName = LastName;
     this->EmployeeID = EmployeeID;
-    this->eSalary = GrossPay;
+    this->eSalary = eSalary;
 }
 
 //Employee::~Employee();
@@ -25,10 +25,10 @@ int Employee::GetEmployeeID(){
 }
 
 string Employee::getName(){
-    return  eFirstInitial + ". " + eLastName;
+    return eFirstInitial + ". " + eLastName;
 }
 
-string GetGrossPay(){
+int Employee::GetGrossPay(){
     return eSalary;
 }
 
