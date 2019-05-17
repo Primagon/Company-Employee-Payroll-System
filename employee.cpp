@@ -5,11 +5,11 @@
 #include<cstdlib>
 using namespace std;
 
-Employee::Employee(const string &JobTitle, const string &FirstName, const string &LastName, 
+Employee::Employee(const string &JobTitle, const char &FirstInitial, const string &LastName, 
 string ContactInfo, int EmployeeID, int GrossPay)
 {
     this->EmployeeTitle = JobTitle;
-    this->eFirstName = FirstName;
+    this->eFirstInitial = FirstInitial;
     this->eLastName = LastName;
     //Can someone connect first name and last names? 
     //I want it seperated for the case we have two people with the same last or first name and it'll return them too.
@@ -22,7 +22,7 @@ string ContactInfo, int EmployeeID, int GrossPay)
 Employee::~Employee();
 
 string GetContactInfo(){
-
+    return this->ContactInfo();
 }
 
 string GetEmployeeID(){
