@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(employee_payroll)
 set(SOURCE main.cpp)
-add_executable(main main.cpp)
+add_executable(main main.cpp ${HEADER_FILES})
 set(HEADER_FILES ceo.h departmenth.h employee.h manager.h)
-add_executable(employee employee.cpp)
+add_library(employee employee.cpp ${HEADER_FILES})
