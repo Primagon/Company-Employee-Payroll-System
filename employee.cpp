@@ -1,8 +1,9 @@
-#include "employee.h"
+#include"employee.h"
 #include<iostream>
 #include<string>
 #include<vector>
 #include<cstdlib>
+#include<string>
 using namespace std;
 
 Employee::Employee(string JobTitle, char FirstInitial, string LastName,
@@ -22,8 +23,9 @@ int Employee::GetEmployeeID(){
     return EmployeeID;
 }
 
-string Employee::getName(){
-    return eFirstInitial + ", " + eLastName + ".";
+string Employee::GetName(){
+    string substitute(1,eFirstInitial);
+    return substitute + "." + eLastName;
 }
 
 int Employee::GetGrossPay(){

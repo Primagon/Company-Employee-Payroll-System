@@ -20,9 +20,7 @@ class Employee
     string GetContactInfo();
     int GetEmployeeID();
     int GetGrossPay();
-    string getName();
-
-        
+      
     void shift_to_root( );
     //Precondition: size() > 0.
     //Postcondition: The "current node" is now the root of the tree.
