@@ -7,8 +7,7 @@ class DepartmentH : public Manager {
     DepartmentH(
         const string &JobTitle, 
         const string &FirstName, 
-        const string &LastName, 
-        string ContactInfo,
+        const string &LastName,
         int EmployeeID,
         int GrossPay
     );

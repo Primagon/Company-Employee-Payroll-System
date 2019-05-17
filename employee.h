@@ -4,21 +4,16 @@
 #include<string>
 #include<vector>
 #include<cstdlib>
+
 using namespace std;
 
 class Employee
 {
     public:
-    Employee(
-        const string &JobTitle, 
-        const char &FirstInitial, 
-        const string &LastName, 
-        string ContactInfo,
-        int EmployeeID,
-        int GrossPay
-        );
+    Employee(string JobTitle, char FirstInitial, string LastName, int EmployeeID, int GrossPay);
     
-    ~Employee();
+    //~Employee();
+    ostream& operator <<(ostream &os);
 
     string GetJobTtile();
     string GetName();
@@ -61,7 +56,6 @@ class Employee
     vector<string> Employees;
     char eFirstInitial;
     string eLastName;
-    string ContactInfo;
     int eSalary;
 
 };
