@@ -14,8 +14,6 @@ int EmployeeID, int eSalary){
     this->eSalary = eSalary;
 }
 
-//Employee::~Employee();
-
 string Employee::GetContactInfo(){
     return eFirstInitial + eLastName + "@company.com";
 }
