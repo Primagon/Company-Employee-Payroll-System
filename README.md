@@ -10,3 +10,4 @@ The application allows a user to look up an employee's payroll information by na
 ##### Tree - Ravid
 The tree is the data structure that organizes the hierarchy of the company using the payroll system. This allows for easier traversal through the all of the employees to pull data.
 <img width="725" alt="employee structure" src="https://user-images.githubusercontent.com/10659846/57788685-8287f200-7705-11e9-9d26-fbdd31a08286.png">
+# HashDataStructureProj
