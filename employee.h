@@ -12,7 +12,7 @@ class Employee
     public:
     Employee(string JobTitle, char FirstInitial, string LastName, int EmployeeID, int GrossPay);
     
-    //~Employee();
+    ~Employee(){};
     ostream& operator <<(ostream &os);
 
     string GetJobTtile();

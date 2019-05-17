@@ -23,7 +23,7 @@ int Employee::GetEmployeeID(){
 }
 
 string Employee::getName(){
-    return eFirstInitial + ". " + eLastName;
+    return eFirstInitial + ", " + eLastName + ".";
 }
 
 int Employee::GetGrossPay(){
