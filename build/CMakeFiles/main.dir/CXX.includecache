@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/employee.h
+iostream
+-
+string
+-
+vector
+-
+cstdlib
+-
+
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/main.cpp
+employee.h
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/employee.h
+

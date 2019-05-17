@@ -11,7 +11,7 @@ class Employee
     public:
     Employee(
         const string &JobTitle, 
-        const string &FirstName, 
+        const char &FirstInitial, 
         const string &LastName, 
         string ContactInfo,
         int EmployeeID,
@@ -29,8 +29,9 @@ class Employee
     }
     */
     string GetContactInfo();
-    string GetEmployeeID();
+    int GetEmployeeID();
     string GetGrossPay();
+    string getName();
 
         
     void shift_to_root( );
@@ -58,8 +59,9 @@ class Employee
     string EmployeeName;
     int EmployeeID;
     vector<string> Employees;
-    string eFirstName;
+    char eFirstInitial;
     string eLastName;
+    string ContactInfo;
     int eSalary;
 
 };

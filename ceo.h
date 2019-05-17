@@ -1,8 +1,8 @@
 #ifndef CEO-H
 #define CEO_H
-#include "employee.h"
+#include "departmenth.h"
 
-class Ceo : public Employee {
+class Ceo : public DepartmentH {
     public:
     Ceo(
         const string &JobTitle, 

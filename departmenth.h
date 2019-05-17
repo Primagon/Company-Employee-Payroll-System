@@ -1,8 +1,8 @@
 #ifndef DEPARTMENTH_H
 #define DEPARTMENTH_H
-#include "employee.h"
+#include "manager.h"
 
-class DepartmentH : public Employee {
+class DepartmentH : public Manager {
     public:
     DepartmentH(
         const string &JobTitle, 

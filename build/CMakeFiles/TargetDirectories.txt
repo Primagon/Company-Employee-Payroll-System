@@ -1,0 +1,4 @@
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/build/CMakeFiles/main.dir
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/build/CMakeFiles/employee.dir

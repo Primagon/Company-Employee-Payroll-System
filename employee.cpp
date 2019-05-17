@@ -22,11 +22,15 @@ string ContactInfo, int EmployeeID, int GrossPay)
 Employee::~Employee();
 
 string GetContactInfo(){
-    return this->ContactInfo();
+
 }
 
-string GetEmployeeID(){
+int GetEmployeeID(){
+    return EmployeeID;
+}
 
+string getName(){
+    return  "" + eFirstInital + ". " + eLastName;
 }
 
 string GetGrossPay(){
@@ -37,16 +41,14 @@ void shift_to_root(){
 
 }
 
- void shift_up( ){
+void shift_up( ){
 
- }
+}
 
- void shift_left( ){
+void shift_left( ){
 
- }
+}
 
- void shift_right( ){
+void shift_right( ){
 
- }
-
- 
+}
