@@ -29,7 +29,7 @@ string Employee::getName(){
 }
 
 string GetGrossPay(){
-
+    return eSalary;
 }
 
 void shift_to_root(){
