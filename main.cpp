@@ -15,12 +15,14 @@ int main(){
     Manager Jerry('J', "Gerald", 1245, 2);
     Jerry.addEmployee(Hey);
     Jerry.addEmployee(Billy);
-    vector<Employee*> temp;
+    vector<Employee> temp;
 
-    temp = Jerry.getEmployees();
+    for(int i=0; i<Jerry.getEmployees().size(); i++){
+        temp.push_back(Jerry.getEmployees()[i]);
+    }
 
     for(int i=0; i<temp.size(); i++){
-        cout << temp[i].getName() << endl;
+        cout << temp[i].GetName() << endl;
     }
 /*
     Lists.push_back(Hey);   //adding the employees to the vector

@@ -13,6 +13,14 @@ Employee::Employee(char FirstInitial, string LastName, int EmployeeID, int eSala
     this->eSalary = eSalary;
 }
 
+char Employee::getFirstInitial(){
+    return eFirstInitial;
+}
+
+string Employee::getLastName(){
+    return eLastName;
+}
+
 string Employee::GetContactInfo(){
     return eFirstInitial + eLastName + "@company.com";
 }
@@ -22,26 +30,10 @@ int Employee::GetEmployeeID(){
 }
 
 string Employee::GetName(){
-    string substitute(1,eFirstInitial);
-    return substitute + "." + eLastName;
+    string substitute(1,getFirstInitial());
+    return substitute + "., " + getLastName();
 }
 
 int Employee::GetGrossPay(){
     return eSalary;
-}
-
-void shift_to_root(){
-
-}
-
-void shift_up( ){
-
-}
-
-void shift_left( ){
-
-}
-
-void shift_right( ){
-
 }

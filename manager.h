@@ -3,17 +3,27 @@
 #include "employee.h"
 #include <vector>
 
-class Manager : public Employee {
+class Manager{
     public:
     Manager(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
 
-    ~Manager();
+    string GetJobTtile();
+    string GetName();
+    string GetContactInfo();
+    int GetEmployeeID();
+    int GetGrossPay();
+    char getFirstInitial();
+    string getLastName();
 
-    vector<Employee*> getEmployees();
-
-    void addEmployee(Employee* staff);
+    vector<Employee> getEmployees();
+    void addEmployee(Employee staff);
 
     private:
-    vector<Employee*> ManagerSubs;
+    int EmployeeID;
+    char eFirstInitial;
+    string eLastName;
+    int eSalary;
+    
+    vector<Employee> ManagerSubs;
 };
 #endif

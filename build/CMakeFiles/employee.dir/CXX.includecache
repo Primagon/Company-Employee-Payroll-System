@@ -17,6 +17,8 @@ vector
 -
 cstdlib
 -
+string
+-
 
 /mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/employee.h
 iostream
