@@ -30,7 +30,7 @@ int Manager::GetEmployeeID(){
 
 string Manager::GetName(){
     string substitute(1,getFirstInitial());
-    return substitute + "., " + getLastName();
+    return substitute + "." + getLastName();
 }
 
 int Manager::GetGrossPay(){

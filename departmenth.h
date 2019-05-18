@@ -2,17 +2,29 @@
 #define DEPARTMENTH_H
 #include "manager.h"
 
-class DepartmentH : public Manager {
+class DepartmentH{
     public:
     DepartmentH(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
 
-    ~DepartmentH();
+    string GetJobTtile();
+    string GetName();
+    string GetContactInfo();
+    int GetEmployeeID();
+    int GetGrossPay();
+    char getFirstInitial();
+    string getLastName();
 
-    vector<Manager*> getManagers();
-    
-    void addManager();
+    vector<Manager> getManagers();
+    void addManager(Manager staff);
 
     private:
-    vector<Manager*> DeptHSubs;
+    int EmployeeID;
+    char eFirstInitial;
+    string eLastName;
+    int eSalary;
+    
+
+    private:
+    vector<Manager> DeptHSubs;
 };
 #endif

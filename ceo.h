@@ -1,18 +1,29 @@
-#ifndef CEO-H
+#ifndef CEO_H
 #define CEO_H
 #include "departmenth.h"
 
-class Ceo : public DepartmentH {
+class CEO{
     public:
-    Ceo(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
+    CEO(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
 
-    ~Ceo();
+    string GetJobTtile();
+    string GetName();
+    string GetContactInfo();
+    int GetEmployeeID();
+    int GetGrossPay();
+    char getFirstInitial();
+    string getLastName();
 
-    vector<DepartmentH*> getDeptHs();
-    
-    void addDeptH();
+    vector<DepartmentH> getDepartmentH();
+    void addDepartmentH(DepartmentH staff);
 
     private:
-    vector<DepartmentH*> CEOSubs;
+    int EmployeeID;
+    char eFirstInitial;
+    string eLastName;
+    int eSalary;
+    
+    private:
+    vector<DepartmentH> CEOSubs;
 };
 #endif
