@@ -101,13 +101,13 @@ void populateTree(CEO boss){
 
     for(int i=1; i<=2; i++){
         int tempID = boss.GetEmployeeID()*10;
-        boss.addDepartmentH((char)(rand()%26+65), names[rand()%61], tempID+i, 150000);
+        boss.addDepartmentH(DepartmentH((char)(rand()%26+65), names[rand()%61], tempID+i, 150000));
         for(int j=1; j<=3; j++){
             tempID = boss.getDepartmentH()[i].GetEmployeeID()*10;
-            boss.getDepartmentH()[i].addManager((char)(rand()%26+65), names[rand()%61], tempID+j, 100000);
+            boss.getDepartmentH()[i].addManager(Manager((char)(rand()%26+65), names[rand()%61], tempID+j, 100000));
             for(int k=1; k<=5; k++){
                 tempID = boss.getDepartmentH()[i].getManagers()[j].GetEmployeeID()*10;
-                boss.getDepartmentH()[i].getManagers()[j].addEmployee((char)(rand()%26+65), names[rand()%61], tempID+k, 75000);
+                boss.getDepartmentH()[i].getManagers()[j].addEmployee(Employee((char)(rand()%26+65), names[rand()%61], tempID+k, 75000));
             }
         }
     }
