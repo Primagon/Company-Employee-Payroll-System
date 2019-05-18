@@ -8,7 +8,7 @@ class DepartmentH : public Manager {
 
     ~DepartmentH();
 
-    Manager* getManagers();
+    vector<Manager*> getManagers();
     
     void addManager();
 

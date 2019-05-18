@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/employee.cpp
+employee.h
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/employee.h
+iostream
+-
+string
+-
+vector
+-
+cstdlib
+-
+string
+-
+
 /mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/employee.h
 iostream
 -
@@ -19,4 +33,22 @@ cstdlib
 /mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/main.cpp
 employee.h
 /mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/employee.h
+employee.cpp
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/employee.cpp
+manager.h
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/manager.h
+manager.cpp
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/manager.cpp
+vector
+-
+
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/manager.cpp
+manager.h
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/manager.h
+
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/manager.h
+employee.h
+/mnt/c/Users/ravid/Documents/GitHub/Company-Employee-Payroll-System/employee.h
+vector
+-
 

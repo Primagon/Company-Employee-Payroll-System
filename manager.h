@@ -9,11 +9,11 @@ class Manager : public Employee {
 
     ~Manager();
 
-    Employee* getEmployees();
+    vector<Employee*> getEmployees();
 
-    void addEmployee();
+    void addEmployee(Employee* staff);
 
     private:
-    vector<Enmployee*> ManagerSubs;
+    vector<Employee*> ManagerSubs;
 };
 #endif

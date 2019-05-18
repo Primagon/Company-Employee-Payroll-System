@@ -10,7 +10,7 @@ using namespace std;
 class Employee
 {
     public:
-    Employee(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
+    Employee(char FirstInitial, string LastName, int EmployeeID, int eSalary);
     
     ~Employee(){};
     ostream& operator <<(ostream &os);
@@ -42,11 +42,9 @@ class Employee
 
 
     private:
-
     int EmployeeID;
     char eFirstInitial;
     string eLastName;
     int eSalary;
-
 };
 #endif

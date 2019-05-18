@@ -8,7 +8,7 @@ class Ceo : public DepartmentH {
 
     ~Ceo();
 
-    DepartmentH* getDeptHs();
+    vector<DepartmentH*> getDeptHs();
     
     void addDeptH();
 

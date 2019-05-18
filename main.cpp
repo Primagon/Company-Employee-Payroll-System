@@ -1,5 +1,8 @@
 #include "employee.h"
 #include "employee.cpp"
+#include "manager.h"
+#include "manager.cpp"
+#include <vector>
 
 int main(){
 
@@ -9,6 +12,17 @@ int main(){
     Employee Billy('B', "Batson", 13345, 5);
     Employee Dude('F', "Jay", 44152, 8);
 
+    Manager Jerry('J', "Gerald", 1245, 2);
+    Jerry.addEmployee(Hey);
+    Jerry.addEmployee(Billy);
+    vector<Employee*> temp;
+
+    temp = Jerry.getEmployees();
+
+    for(int i=0; i<temp.size(); i++){
+        cout << temp[i].getName() << endl;
+    }
+/*
     Lists.push_back(Hey);   //adding the employees to the vector
     Lists.push_back(Billy);
     Lists.push_back(Dude);
@@ -50,7 +64,7 @@ int main(){
         {
         setting = false;
         }
-    }
+    }*/
 
     //Billy.~Employee();
 

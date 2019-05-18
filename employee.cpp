@@ -30,10 +30,6 @@ int Employee::GetGrossPay(){
     return eSalary;
 }
 
-string Employee::GetJobTtile(){
-    return EmployeeTitle;
-}
-
 void shift_to_root(){
 
 }
