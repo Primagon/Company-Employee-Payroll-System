@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.0 )
 project(employee_payroll)
 set(SOURCE main.cpp)
 add_executable(main main.cpp ${HEADER_FILES})
