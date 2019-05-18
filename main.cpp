@@ -5,9 +5,9 @@ int main(){
 
     vector<Employee> Lists; //the vector of class employees
 
-    Employee Hey("shoot", 'C', "Dwayne", 23312, 3); // defining the employees here
-    Employee Billy("poop", 'B', "Batson", 13345, 5);
-    Employee Dude("ceo", 'F', "Jay", 44152, 8);
+    Employee Hey('C', "Dwayne", 23312, 3); // defining the employees here
+    Employee Billy('B', "Batson", 13345, 5);
+    Employee Dude('F', "Jay", 44152, 8);
 
     Lists.push_back(Hey);   //adding the employees to the vector
     Lists.push_back(Billy);

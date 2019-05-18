@@ -4,16 +4,15 @@
 
 class Ceo : public DepartmentH {
     public:
-    Ceo(
-        const string &JobTitle, 
-        const string &FirstName, 
-        const string &LastName, 
-        string ContactInfo,
-        int EmployeeID,
-        int GrossPay
-    );
+    Ceo(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
 
     ~Ceo();
 
+    DepartmentH* getDeptHs();
+    
+    void addDeptH();
+
+    private:
+    vector<DepartmentH*> CEOSubs;
 };
 #endif

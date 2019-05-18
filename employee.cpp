@@ -6,9 +6,7 @@
 #include<string>
 using namespace std;
 
-Employee::Employee(string JobTitle, char FirstInitial, string LastName,
-int EmployeeID, int eSalary){
-    this->EmployeeTitle = JobTitle;
+Employee::Employee(char FirstInitial, string LastName, int EmployeeID, int eSalary){
     this->eFirstInitial = FirstInitial;
     this->eLastName = LastName;
     this->EmployeeID = EmployeeID;

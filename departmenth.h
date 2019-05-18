@@ -4,15 +4,15 @@
 
 class DepartmentH : public Manager {
     public:
-    DepartmentH(
-        const string &JobTitle, 
-        const string &FirstName, 
-        const string &LastName,
-        int EmployeeID,
-        int GrossPay
-    );
+    DepartmentH(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
 
     ~DepartmentH();
 
+    Manager* getManagers();
+    
+    void addManager();
+
+    private:
+    vector<Manager*> DeptHSubs;
 };
 #endif

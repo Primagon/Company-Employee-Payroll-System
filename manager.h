@@ -1,19 +1,19 @@
 #ifndef MANAGER_H
 #define MANAGER_H
 #include "employee.h"
+#include <vector>
 
 class Manager : public Employee {
     public:
-    Manager(
-        const string &JobTitle, 
-        const string &FirstName, 
-        const string &LastName, 
-        string ContactInfo,
-        int EmployeeID,
-        int GrossPay
-    );
+    Manager(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
 
     ~Manager();
 
+    Employee* getEmployees();
+
+    void addEmployee();
+
+    private:
+    vector<Enmployee*> ManagerSubs;
 };
 #endif
