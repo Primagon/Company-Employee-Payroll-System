@@ -7,10 +7,17 @@
 #include "ceo.h"
 #include "ceo.cpp"
 #include <vector>
+#include <cmath>
+#include <ctime>
+
+void populateTree(CEO boss);
 
 int main(){
 
-    Employee Hey('C', "Dwayne", 23312, 3); // defining the employees here
+    CEO boss('R', "Giovanni", 1, 200000);
+    populateTree(boss);
+
+    /*Employee Hey('C', "Dwayne", 23312, 3); // defining the employees here
     Employee Billy('B', "Batson", 13345, 5);
     Employee Dude('F', "Jay", 44152, 8);
 
@@ -46,7 +53,7 @@ int main(){
 
     CEO God('Z', "God", 10001, 9999); // defining the ceo here
     God.addDepartmentH(Fire);
-    God.addDepartmentH(Water);
+    God.addDepartmentH(Water);*/
 
     vector<Employee> temp;
     vector<Manager> manage;
@@ -69,4 +76,11 @@ int main(){
     }
 
     return 0;
+}
+
+void populateTree(CEO boss){
+    srand(time(NULL));
+    for(int i=0; i<2; i++){
+        boss.addDepartmentH();
+    }
 }
