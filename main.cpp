@@ -9,7 +9,7 @@ int main(){
     Employee Billy("poop", 'B', "Batson", 13345, 5);
     Employee Dude("ceo", 'F', "Jay", 44152, 8);
 
-    Lists.push_back(Hey);   /adding the employees to the vector
+    Lists.push_back(Hey);   //adding the employees to the vector
     Lists.push_back(Billy);
     Lists.push_back(Dude);
 
@@ -25,7 +25,7 @@ int main(){
             for (int i = 0; i < Lists.size(); i++) 
             {
                 cout << "Name: " << Lists[i].GetName() << ", ID: " << Lists[i].GetEmployeeID() 
-                   << ", Contact Information: " << Lists[i].GetContactInfo() << endl;
+                   << ", Contact Information: " << Lists[i].GetContactInfo() << ", Job Title: " << Lists[i].GetJobTtile() << endl;
             }
             cout << "What would you like to do?" << ends;
             cin >> input;
