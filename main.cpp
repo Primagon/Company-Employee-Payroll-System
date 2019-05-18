@@ -9,6 +9,7 @@
 #include <vector>
 #include <cmath>
 #include <ctime>
+#include <fstream>
 
 void populateTree(CEO boss);
 
@@ -16,6 +17,13 @@ int main(){
 
     CEO boss('R', "Giovanni", 1, 200000);
     populateTree(boss);
+
+    Employee bro = boss.getDepartmentH()[1].getManagers()[2].getEmployees()[4];
+
+    cout << bro.GetName() << endl;
+    cout << bro.GetEmployeeID() << endl;
+    cout << bro.GetContactInfo() << endl;
+    cout << bro.GetGrossPay() << endl;
 
     /*Employee Hey('C', "Dwayne", 23312, 3); // defining the employees here
     Employee Billy('B', "Batson", 13345, 5);
@@ -53,7 +61,7 @@ int main(){
 
     CEO God('Z', "God", 10001, 9999); // defining the ceo here
     God.addDepartmentH(Fire);
-    God.addDepartmentH(Water);*/
+    God.addDepartmentH(Water);
 
     vector<Employee> temp;
     vector<Manager> manage;
@@ -73,14 +81,34 @@ int main(){
     }
     for(int i=0; i<temp.size(); i++){
         cout << "Name:" <<temp[i].GetName() << ", EmployeeID: "<< temp[i].GetEmployeeID() <<  endl;
-    }
+    }*/
 
     return 0;
 }
 
 void populateTree(CEO boss){
+
+    ifstream myFile;
+    myFile.open("randLastNames.txt");
     srand(time(NULL));
-    for(int i=0; i<2; i++){
-        boss.addDepartmentH();
+    vector<string> names;
+    int a = 0;
+
+    while (myFile.good()){
+        getline(myFile, names[a]);
+        a++;
+    }
+
+    for(int i=1; i<=2; i++){
+        int tempID = boss.GetEmployeeID()*10;
+        boss.addDepartmentH((char)(rand()%26+65), names[rand()%61], tempID+i, 150000);
+        for(int j=1; j<=3; j++){
+            tempID = boss.getDepartmentH()[i].GetEmployeeID()*10;
+            boss.getDepartmentH()[i].addManager((char)(rand()%26+65), names[rand()%61], tempID+j, 100000);
+            for(int k=1; k<=5; k++){
+                tempID = boss.getDepartmentH()[i].getManagers()[j].GetEmployeeID()*10;
+                boss.getDepartmentH()[i].getManagers()[j].addEmployee((char)(rand()%26+65), names[rand()%61], tempID+k, 75000);
+            }
+        }
     }
 }
