@@ -117,8 +117,10 @@ int main(){
 
     for(int i=1; i<=allEmployees.size(); i++){
         if(i%numEmployees==0){
-            allManagers[i].setManagerSubs(employeeHolder);
+            int insertHere=0;
+            allManagers[insertHere].setManagerSubs(employeeHolder);
             employeeHolder.clear();
+            insertHere++;
         }
         employeeHolder.push_back(allEmployees[i-1]);
     }
@@ -127,15 +129,15 @@ int main(){
 
     for(int i=1; i<=allManagers.size(); i++){
         if(i%numManagers==0){
-            allDeptH[i].setDeptHSubs(managerHolder);
+            int insertHere=0;
+            allDeptH[insertHere].setDeptHSubs(managerHolder);
             managerHolder.clear();
+            insertHere++;
         }
         managerHolder.push_back(allManagers[i-1]);
     }
 
-    for(int i=0; i<allDeptH.size(); i++){
-        boss.setCEOSubs(allDeptH);
-    }
+    boss.setCEOSubs(allDeptH);
 
     return 0;
 }
