@@ -4,9 +4,8 @@
 
 class DepartmentH{
     public:
-    DepartmentH(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
+    DepartmentH(char FirstInitial, string LastName, int EmployeeID, int eSalary);
 
-    string GetJobTtile();
     string GetName();
     string GetContactInfo();
     int GetEmployeeID();

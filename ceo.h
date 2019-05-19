@@ -4,9 +4,8 @@
 
 class CEO{
     public:
-    CEO(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
+    CEO(char FirstInitial, string LastName, int EmployeeID, int eSalary);
 
-    string GetJobTtile();
     string GetName();
     string GetContactInfo();
     int GetEmployeeID();

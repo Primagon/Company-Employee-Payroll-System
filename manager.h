@@ -5,9 +5,8 @@
 
 class Manager{
     public:
-    Manager(char FirstInitial, string LastName, int EmployeeID, int GrossPay);
+    Manager(char FirstInitial, string LastName, int EmployeeID, int eSalary);
 
-    string GetJobTtile();
     string GetName();
     string GetContactInfo();
     int GetEmployeeID();

@@ -14,7 +14,6 @@ class Employee
     
     ~Employee(){};
 
-    string GetJobTtile();
     string GetName();
     string GetContactInfo();
     int GetEmployeeID();
