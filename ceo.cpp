@@ -45,3 +45,9 @@ void CEO::addDepartmentH(DepartmentH staff){
     CEOSubs.push_back(staff);
 }
 
+void setCEOSubs(vector<DepartmentH> newCEOSubs){
+    CEOSubs.clear();
+    for(int i=0; i<newCEOSubs.size(); i++){
+        CEOSubs.push_back(newCEOSubs[i]);
+    }
+}

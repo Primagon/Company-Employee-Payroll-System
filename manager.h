@@ -16,6 +16,7 @@ class Manager{
 
     vector<Employee> getEmployees();
     void addEmployee(Employee staff);
+    void setManagerSubs(vector<Employee> ManagerSubs);
 
     private:
     int EmployeeID;

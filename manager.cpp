@@ -44,3 +44,10 @@ vector<Employee> Manager::getEmployees(){
 void Manager::addEmployee(Employee staff){
     ManagerSubs.push_back(staff);
 }
+
+void setManagerSubs(vector<Employee> newManagerSubs){
+    ManagerSubs.clear();
+    for(int i=0; i<newManagerSubs.size(); i++){
+        ManagerSubs.push_back(newManagerSubs[i]);
+    }
+}

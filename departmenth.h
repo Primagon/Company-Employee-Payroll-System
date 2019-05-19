@@ -15,6 +15,7 @@ class DepartmentH{
 
     vector<Manager> getManagers();
     void addManager(Manager staff);
+    void setDeptHSubs(vector<Manager> DeptHSubs);
 
     private:
     int EmployeeID;

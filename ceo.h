@@ -15,6 +15,7 @@ class CEO{
 
     vector<DepartmentH> getDepartmentH();
     void addDepartmentH(DepartmentH staff);
+    void setCEOSubs(vector<DepartmentH> CEOSubs);
 
     private:
     int EmployeeID;

@@ -44,3 +44,10 @@ vector<Manager> DepartmentH::getManagers(){
 void DepartmentH::addManager(Manager staff){
     DeptHSubs.push_back(staff);
 }
+
+void setDeptHSubs(vector<Manager> newDeptHSubs){
+    DeptHSubs.clear();
+    for(int i=0; i<newDeptHSubs.size(); i++){
+        DeptHSubs.push_back(newDeptHSubs[i]);
+    }
+}
