@@ -115,9 +115,10 @@ int main(){
 
     vector<Employee> employeeHolder;
 
+    int insertHere=0;
+
     for(int i=1; i<=allEmployees.size(); i++){
         if(i%numEmployees==0){
-            int insertHere=0;
             allManagers[insertHere].setManagerSubs(employeeHolder);
             employeeHolder.clear();
             insertHere++;
@@ -127,9 +128,10 @@ int main(){
 
     vector<Manager> managerHolder;
 
+    insertHere=0;
+
     for(int i=1; i<=allManagers.size(); i++){
         if(i%numManagers==0){
-            int insertHere=0;
             allDeptH[insertHere].setDeptHSubs(managerHolder);
             managerHolder.clear();
             insertHere++;
