@@ -42,10 +42,13 @@ int main(){
             for(int k=1; k<=5; k++){
                 tempID*=10;
                 Employee tempEmployee((char)(rand()%26+65), names[rand()%61], tempID+k, 75000);
-                DepartmentH testing = boss.getDepartmentH()[0];
-                Manager test = testing.getManagers()[0];
-                test.addEmployee(tempEmployee); 
+                tempDepartmentH = boss.getDepartmentH()[i-1];
+                tempDepartmentH.getManagers()[j-1].addEmployee(tempEmployee);
+                //DepartmentH testing = boss.getDepartmentH()[0];
+                //Manager test = testing.getManagers()[0];
+                //test.addEmployee(tempEmployee); 
             }
+            boss.getDepartmentH()[i-1] = tempDepartmentH;
         }
     }
     
