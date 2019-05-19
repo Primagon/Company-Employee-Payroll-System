@@ -139,6 +139,18 @@ int main(){
 
     boss.setCEOSubs(allDeptH);
 
+    for(int i=0; i<boss.getDepartmentH().size(); i++){
+        cout << boss.getDepartmentH()[i].GetName() << endl;
+        DepartmentH tempDeptH = boss.getDepartmentH()[i];
+        for(int j=0; j<tempDeptH.getManagers().size(); j++){
+            cout << "\t" << tempDeptH.getManagers()[j].GetName() << endl;
+            Manager tempManager = tempDeptH.getManagers()[j];
+            for(int k=0; k<tempManager.getEmployees().size(); k++){
+                cout << "\t\t" << tempManager.getEmployees()[k].GetName() << endl;
+            }
+        }
+    }
+
     return 0;
 }
 
