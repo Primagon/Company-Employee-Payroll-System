@@ -115,7 +115,7 @@ int main(){
 
         if (userInput == "quit"){
             active = false;
-        }
+        } 
         else if (userInput == "help") {
             cout << "The possible commands are: 'help', 'quit', show, Lastname, EmployeeID, CEO, DeptH, Managers, Employees " << endl;
         }
@@ -144,39 +144,40 @@ int main(){
                 cout<<"Gross Pay: "<<boss.GetGrossPay()<<endl;
             }
             else{
-                for(int i=0; i<allDeptH.size(); i++){
-                    
-                    //allDeptH[i];
-                    if(emplid == allDeptH[i].GetEmployeeID()){
-                    cout<<allDeptH[i].GetName()<<endl;
+                for(int i=0; i<boss.getDepartmentH().size(); i++){
+                    DepartmentH tempDeptH = boss.getDepartmentH()[i];
+                    if (emplid == tempDeptH.GetEmployeeID()){
                     cout<<"Position: Department Head"<<endl;
-                    cout<<"Contact Info: "<<allDeptH[i].GetContactInfo()<<endl;
-                    cout<<"Employee ID: "<<allDeptH[i].GetEmployeeID()<<endl;
-                    cout<<"Gross Pay: "<<allDeptH[i].GetGrossPay()<<endl;
+                    cout<<"Contact Info: "<<tempDeptH.GetContactInfo()<<endl;
+                    cout<<"Employee ID: "<<tempDeptH.GetEmployeeID()<<endl;
+                    cout<<"Gross Pay: "<<tempDeptH.GetGrossPay()<<endl;
                     }
-                }
-                for(int i=0; i<allManagers.size(); i++){
-                    allManagers[i];
-                    if(emplid == allManagers[i].GetEmployeeID()){
-                    cout<<allManagers[i].GetName()<<endl;
+                for(int j=0; j<tempDeptH.getManagers().size(); j++){
+                    tempDeptH.getManagers()[j].GetEmployeeID();
+                    Manager tempManager = tempDeptH.getManagers()[j];
+                if(emplid == tempManager.GetEmployeeID() ){
                     cout<<"Position: Manager"<<endl;
-                    cout<<"Contact Info: "<<allManagers[i].GetContactInfo()<<endl;
-                    cout<<"Employee ID: "<<allManagers[i].GetEmployeeID()<<endl;
-                    cout<<"Gross Pay: "<<allManagers[i].GetGrossPay()<<endl;
-                    }
+                    cout<<"Contact Info: "<<tempManager.GetContactInfo()<<endl;
+                    cout<<"Employee ID: "<<tempManager.GetEmployeeID()<<endl;
+                    cout<<"Gross Pay: "<<tempManager.GetGrossPay()<<endl;
                 }
-                for(int i=0; i<allEmployees.size(); i++){
-                    allEmployees[i];
-                    if(emplid == allEmployees[i].GetEmployeeID()){
-                    cout<<allEmployees[i].GetName()<<endl;
-                    cout<<"Position: Employee"<<endl;
-                    cout<<"Contact Info: "<<allEmployees[i].GetContactInfo()<<endl;
-                    cout<<"Employee ID: "<<allEmployees[i].GetEmployeeID()<<endl;
-                    cout<<"Gross Pay: "<<allEmployees[i].GetGrossPay()<<endl;
-                    }
+                for(int k=0; k<tempManager.getEmployees().size(); k++){
+                 tempManager.getEmployees()[k];
+                 Employee tempEmployee = tempManager.getEmployees()[k];
+                 if(emplid == tempEmployee.GetEmployeeID()){
+                     cout<<"Position: Manager"<<endl;
+                    cout<<"Contact Info: "<<tempEmployee.GetContactInfo()<<endl;
+                    cout<<"Employee ID: "<<tempEmployee.GetEmployeeID()<<endl;
+                    cout<<"Gross Pay: "<<tempEmployee.GetGrossPay()<<endl;
                 }
+                }
+                }
+                } 
+                
             }
+                
         }
+            
         else if (userInput == "Lastname") {
             //ask what is the last name
             cout<<"What is the last name?"<<endl;
@@ -189,36 +190,38 @@ int main(){
                 cout<<"Gross Pay: "<<boss.GetGrossPay()<<endl;
             }
             else{
-                for(int i=0; i<allDeptH.size(); i++){
-                    allDeptH[i];
-                    if(lname == allDeptH[i].getLastName()){
-                    cout<<allDeptH[i].GetName()<<endl;
-                    cout<<"Position: Department Head"<<endl;
-                    cout<<"Contact Info: "<<allDeptH[i].GetContactInfo()<<endl;
-                    cout<<"Employee ID: "<<allDeptH[i].GetEmployeeID()<<endl;
-                    cout<<"Gross Pay: "<<allDeptH[i].GetGrossPay()<<endl;
+                for(int i=0; i<boss.getDepartmentH().size(); i++){
+                    boss.getDepartmentH()[i].getLastName();
+                    DepartmentH tempDeptH = boss.getDepartmentH()[i];
+                    if(boss.getDepartmentH()[i].getLastName() == lname){
+                        cout<<"Position: Department Head"<<endl;
+                        cout<<"Contact Info: "<<tempDeptH.GetContactInfo()<<endl;
+                        cout<<"Employee ID: "<<tempDeptH.GetEmployeeID()<<endl;
+                        cout<<"Gross Pay: "<<tempDeptH.GetGrossPay()<<endl;
                     }
-                }
-                for(int i=0; i<allManagers.size(); i++){
-                    allManagers[i];
-                    if(lname == allManagers[i].GetName()){
-                    cout<<allManagers[i].GetName()<<endl;
+                for(int j=0; j<tempDeptH.getManagers().size(); j++){
+                    tempDeptH.getManagers()[j].getLastName();
+                    Manager tempManager = tempDeptH.getManagers()[j];
+                    if(tempDeptH.getManagers()[j].getLastName() == lname){
+                        cout<<"Position: Manager"<<endl;
+                        cout<<"Contact Info: "<<tempManager.GetContactInfo()<<endl;
+                        cout<<"Employee ID: "<<tempManager.GetEmployeeID()<<endl;
+                        cout<<"Gross Pay: "<<tempManager.GetGrossPay()<<endl;
+                    }
+                for(int k=0; k<tempManager.getEmployees().size(); k++){
+                    tempManager.getEmployees()[k].getLastName();
+                    Employee tempEmployee = tempManager.getEmployees()[k];
+                    if(tempManager.getEmployees()[k].getLastName() == lname){
                     cout<<"Position: Manager"<<endl;
-                    cout<<"Contact Info: "<<allManagers[i].GetContactInfo()<<endl;
-                    cout<<"Employee ID: "<<allManagers[i].GetEmployeeID()<<endl;
-                    cout<<"Gross Pay: "<<allManagers[i].GetGrossPay()<<endl;
+                    cout<<"Contact Info: "<<tempEmployee.GetContactInfo()<<endl;
+                    cout<<"Employee ID: "<<tempEmployee.GetEmployeeID()<<endl;
+                    cout<<"Gross Pay: "<<tempEmployee.GetGrossPay()<<endl;
+
                     }
-                }
-                for(int i=0; i<allEmployees.size(); i++){
-                    allEmployees[i];
-                    if(lname == allEmployees[i].GetName()){
-                    cout<<allEmployees[i].GetName()<<endl;
-                    cout<<"Position: Employee"<<endl;
-                    cout<<"Contact Info: "<<allEmployees[i].GetContactInfo()<<endl;
-                    cout<<"Employee ID: "<<allEmployees[i].GetEmployeeID()<<endl;
-                    cout<<"Gross Pay: "<<allEmployees[i].GetGrossPay()<<endl;
-                    }
-                }
+            }
+        }
+    }
+
             }
         }
         else if(userInput == "CEO"){
