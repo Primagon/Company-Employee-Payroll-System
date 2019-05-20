@@ -65,21 +65,7 @@ int main(){
         allEmployees.push_back(tempEmployee);
     }
 
-    cout << "numEmployee: " << allEmployees.size() << "\nnumManagers: " << allManagers.size()
-        << "\nnumHeads: " << allDeptH.size() << endl;
-
     vector<Employee> employeeHolder;
-
-    //int insertHere=0;
-
-    /*for(int i=1; i<=allEmployees.size(); i++){
-        if(i%numEmployees==0){
-            allManagers[insertHere].setManagerSubs(employeeHolder);
-            employeeHolder.clear();
-            insertHere++;
-        }
-        employeeHolder.push_back(allEmployees[i-1]);
-    }*/
 
     for(int i=0; i<allManagers.size(); i++){
         for(int j=0; j<numEmployees; j++){
@@ -92,17 +78,7 @@ int main(){
 
     vector<Manager> managerHolder;
 
-    //insertHere=0;
-
-    /*for(int i=1; i<=allManagers.size(); i++){
-        if(i%numManagers==0){
-            allDeptH[insertHere].setDeptHSubs(managerHolder);
-            managerHolder.clear();
-            insertHere++;
-        }
-        managerHolder.push_back(allManagers[i-1]);
-    }*/
-
+    
     for(int i=0; i<allDeptH.size(); i++){
         for(int j=0; j<numManagers; j++){
             managerHolder.push_back(allManagers[0]);
@@ -113,15 +89,16 @@ int main(){
     }
 
     boss.setCEOSubs(allDeptH);
-
+    
+    cout<<boss.GetName()<<endl;
     for(int i=0; i<boss.getDepartmentH().size(); i++){
-        cout << boss.getDepartmentH()[i].GetName() << endl;
+        cout << "\t"<< boss.getDepartmentH()[i].GetName() << endl;
         DepartmentH tempDeptH = boss.getDepartmentH()[i];
         for(int j=0; j<tempDeptH.getManagers().size(); j++){
-            cout << "\t" << tempDeptH.getManagers()[j].GetName() << endl;
+            cout << "\t\t" << tempDeptH.getManagers()[j].GetName() << endl;
             Manager tempManager = tempDeptH.getManagers()[j];
             for(int k=0; k<tempManager.getEmployees().size(); k++){
-                cout << "\t\t" << tempManager.getEmployees()[k].GetName() << endl;
+                cout << "\t\t\t" << tempManager.getEmployees()[k].GetName() << endl;
             }
         }
     } 
@@ -140,7 +117,21 @@ int main(){
             active = false;
         }
         else if (userInput == "help") {
-            cout << "The possible commands are: 'help', 'quit', Lastname, EmployeeID, CEO, DeptH, Managers, Employees " << endl;
+            cout << "The possible commands are: 'help', 'quit', show, Lastname, EmployeeID, CEO, DeptH, Managers, Employees " << endl;
+        }
+        else if (userInput == "show") {
+            cout<<boss.GetName()<<endl;
+            for(int i=0; i<boss.getDepartmentH().size(); i++){
+                cout << "\t"<< boss.getDepartmentH()[i].GetName() << endl;
+                DepartmentH tempDeptH = boss.getDepartmentH()[i];
+            for(int j=0; j<tempDeptH.getManagers().size(); j++){
+                cout << "\t\t" << tempDeptH.getManagers()[j].GetName() << endl;
+                Manager tempManager = tempDeptH.getManagers()[j];
+            for(int k=0; k<tempManager.getEmployees().size(); k++){
+                cout << "\t\t\t" << tempManager.getEmployees()[k].GetName() << endl;
+            }
+        }
+    } 
         }
         else if (userInput == "EmployeeID") {
             cout<<"What is the Employee ID?"<<endl;
