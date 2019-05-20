@@ -15,7 +15,7 @@
 void populateTree(CEO boss);
 
 int main(){
-
+    
     CEO boss('R', "Giovanni", 1, 200000);
 
     ifstream myfile;
@@ -31,54 +31,6 @@ int main(){
         }
         myfile.close();
     }
-
-    /*for(int i=1; i<=2; i++){
-        int tempID = boss.GetEmployeeID()*10;
-        DepartmentH tempDepartmentH((char)(rand()%26+65), names[rand()%61], tempID+i, 150000);
-        boss.addDepartmentH(tempDepartmentH);
-        for(int j=1; j<=3; j++){
-            tempID = boss.getDepartmentH()[i-1].GetEmployeeID()*10;
-            Manager tempManager((char)(rand()%26+65), names[rand()%61], tempID+j, 100000);
-            boss.getDepartmentH()[i-1].addManager(tempManager);
-            tempDepartmentH = boss.getDepartmentH()[i-1];
-            tempManager =  tempDepartmentH.getManagers()[j-1];
-            cout << "\t" + tempManager.GetName() << endl;
-            for(int k=1; k<=5; k++){
-                tempID*=10;
-                Employee tempEmployee((char)(rand()%26+65), names[rand()%61], tempID+k, 75000);
-                tempDepartmentH = boss.getDepartmentH()[i-1];
-                tempManager = tempDepartmentH.getManagers()[j-1];
-                tempManager.addEmployee(tempEmployee);
-                //cout << "\t" + tempDepartmentH.getManagers()[j-1].GetName() << endl;
-                //tempDepartmentH.getManagers()[j-1].addEmployee(tempEmployee);
-                //DepartmentH testing = boss.getDepartmentH()[0];
-                //Manager test = testing.getManagers()[0];
-                //test.addEmployee(tempEmployee); 
-            }
-            tempDepartmentH.getManagers()[j-1] = tempManager;
-            boss.getDepartmentH()[i-1] = tempDepartmentH;
-        }
-    }
-    
-    //populateTree(boss);
-/*
-    DepartmentH bro = boss.getDepartmentH()[0];
-    DepartmentH boi = boss.getDepartmentH()[1];
-    //Manager hi = boss.getDepartmentH()[0].getManagers()[0];
-
-    Manager bob('A', "BBBB", 12, 124);
-
-    cout << bob.GetName() << endl;
-
-    cout << bro.GetName() << endl;
-    //cout << bro.GetEmployeeID() << endl;
-    cout << bro.GetContactInfo() << endl;
-    cout << bro.GetGrossPay() << endl;
-
-    cout << boi.GetName() << endl;
-    //cout << boi.GetEmployeeID() << endl;
-    cout << boi.GetContactInfo() << endl;
-    cout << boi.GetGrossPay() << endl;*/
 
     int numDeptH;
     int numManagers;
@@ -152,7 +104,37 @@ int main(){
             }
         }
     }
+    // application starts here
+    bool active = true;
+    string userInput;
 
+    while (active){
+        cout << "What would you like to search? Type 'quit' to exit, and 'help' for possible commands: " << ends;
+        cin >> userInput;
+
+        if (userInput == "quit"){
+            active = false;
+        }
+        else if (userInput == "help") {
+            cout << "The possible commands are: 'help', 'quit', 'employeeid', 'ceo', 'departmentheads', 'managers', 'employees'." << endl;
+        }
+        else if (userInput == "employeeid") {
+            //the code for searching for employeeids prints out their information
+        }
+        else if (userInput == "ceo") {
+            // should list the ceo along with their information
+        }
+        else if (userInput == "departmentheads"){
+            //should list the departmentheads and print out their information
+        }
+        else if (userInput == "managers"){
+            // should list the managers and print out their information
+        }
+        else if (userInput == "employees") {
+            //should list the employees and print out their information
+        }
+    }
+    //application ends here
     return 0;
 }
 
