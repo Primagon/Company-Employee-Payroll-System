@@ -65,30 +65,51 @@ int main(){
         allEmployees.push_back(tempEmployee);
     }
 
+    cout << "numEmployee: " << allEmployees.size() << "\nnumManagers: " << allManagers.size()
+        << "\nnumHeads: " << allDeptH.size() << endl;
+
     vector<Employee> employeeHolder;
 
-    int insertHere=0;
+    //int insertHere=0;
 
-    for(int i=1; i<=allEmployees.size(); i++){
+    /*for(int i=1; i<=allEmployees.size(); i++){
         if(i%numEmployees==0){
             allManagers[insertHere].setManagerSubs(employeeHolder);
             employeeHolder.clear();
             insertHere++;
         }
         employeeHolder.push_back(allEmployees[i-1]);
+    }*/
+
+    for(int i=0; i<allManagers.size(); i++){
+        for(int j=0; j<numEmployees; j++){
+            employeeHolder.push_back(allEmployees[0]);
+            allEmployees.erase(allEmployees.begin());
+        }
+        allManagers[i].setManagerSubs(employeeHolder);
+        employeeHolder.clear();
     }
 
     vector<Manager> managerHolder;
 
-    insertHere=0;
+    //insertHere=0;
 
-    for(int i=1; i<=allManagers.size(); i++){
+    /*for(int i=1; i<=allManagers.size(); i++){
         if(i%numManagers==0){
             allDeptH[insertHere].setDeptHSubs(managerHolder);
             managerHolder.clear();
             insertHere++;
         }
         managerHolder.push_back(allManagers[i-1]);
+    }*/
+
+    for(int i=0; i<allDeptH.size(); i++){
+        for(int j=0; j<numManagers; j++){
+            managerHolder.push_back(allManagers[0]);
+            allManagers.erase(allManagers.begin());
+        }
+        allDeptH[i].setDeptHSubs(managerHolder);
+        managerHolder.clear();
     }
 
     boss.setCEOSubs(allDeptH);
