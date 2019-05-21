@@ -49,19 +49,23 @@ int main(){
     vector<Employee> allEmployees;
     vector<Manager> allManagers;
     vector<DepartmentH> allDeptH;
+    int tempID = 1;
 
     for(int i=0; i<numDeptH; i++){
-        DepartmentH tempDepartmentH((char)(rand()%26+65), names[rand()%61], 1, 150000);
+        tempID++;
+        DepartmentH tempDepartmentH((char)(rand()%26+65), names[rand()%88799], tempID, 150000);
         allDeptH.push_back(tempDepartmentH);
     }
 
     for(int i=1; i<=numDeptH*numManagers; i++){
-        Manager tempManager((char)(rand()%26+65), names[rand()%61], 1, 100000);
+        tempID++;
+        Manager tempManager((char)(rand()%26+65), names[rand()%88799], tempID, 100000);
         allManagers.push_back(tempManager);
     }
 
     for(int i=0; i<numDeptH*numManagers*numEmployees; i++){
-        Employee tempEmployee((char)(rand()%26+65), names[rand()%61], 1, 75000);
+        tempID++;
+        Employee tempEmployee((char)(rand()%26+65), names[rand()%88799], tempID, 75000);
         allEmployees.push_back(tempEmployee);
     }
 
@@ -102,7 +106,8 @@ int main(){
             }
         }
     } 
-   
+
+
  // application starts here
     bool active = true;
     string userInput;
@@ -166,8 +171,10 @@ int main(){
                     tempManager.getEmployees()[k].GetEmployeeID();
                     Employee tempEmployee = tempManager.getEmployees()[k];
                     if(tempEmployee.GetEmployeeID() == emplid){
-                        cout<<"Position: Manager"<<endl;
-                        cout<<"Contact Info: "<<tempEmployee.GetContactInfo()<<endl;
+                        cout<<"Position: Employee"<<endl;
+                        string contactinfo = "Contact Info: " + tempEmployee.GetContactInfo();
+                        cout << tempEmployee.GetContactInfo() << endl;
+                        cout<<contactinfo<<endl;
                         cout<<"Employee ID: "<<tempEmployee.GetEmployeeID()<<endl;
                         cout<<"Gross Pay: "<<tempEmployee.GetGrossPay()<<endl;
                     }
@@ -182,6 +189,20 @@ int main(){
             cout<<"What is the last name?"<<endl;
             cin>>lname;
 
+            int counter = 0;
+            int counters = 0;
+            for (int i=0;i<lname.length();i++){
+                toupper(lname[i]);
+                counter += char(lname[i]);                
+            }   
+            for (int i=0; i<boss.getDepartmentH().size(); i++){
+                string hi = (boss.getDepartmentH()[i].getLastName());
+                toupper(hi[i]);
+                counters += char(hi[i]);
+                cout << hi[i] << " " << char(hi[i]) << endl;
+            }
+                cout << counter << endl;
+                cout << counters << endl;
             if(lname == boss.getLastName()){
                 cout<<boss.GetName()<<endl;
                 cout<<"Position: CEO"<<endl;
@@ -193,7 +214,10 @@ int main(){
                 for(int i=0; i<boss.getDepartmentH().size(); i++){
                     boss.getDepartmentH()[i].getLastName();
                     DepartmentH tempDeptH = boss.getDepartmentH()[i];
-                    if(tempDeptH.getLastName() == lname){
+                    cout << lname.compare(tempDeptH.getLastName()) << endl;
+                    string compared = tempDeptH.getLastName();
+                    cout << compared << endl;
+                    if(compared[i] == lname[i]){
                         cout<<"Position: Department Head"<<endl;
                         cout<<"Contact Info: "<<tempDeptH.GetContactInfo()<<endl;
                         cout<<"Employee ID: "<<tempDeptH.GetEmployeeID()<<endl;
@@ -212,7 +236,7 @@ int main(){
                     tempManager.getEmployees()[k].getLastName();
                     Employee tempEmployee = tempManager.getEmployees()[k];
                     if(tempEmployee.getLastName() == lname){
-                        cout<<"Position: Manager"<<endl;
+                        cout<<"Position: Employee"<<endl;
                         cout<<"Contact Info: "<<tempEmployee.GetContactInfo()<<endl;
                         cout<<"Employee ID: "<<tempEmployee.GetEmployeeID()<<endl;
                         cout<<"Gross Pay: "<<tempEmployee.GetGrossPay()<<endl;
@@ -253,36 +277,4 @@ int main(){
     }
     //application ends here
     return 0;
-}
-
-void populateTree(CEO boss){
-
-    ifstream myfile;
-    myfile.open("randLastName.txt");
-    srand(time(NULL));
-    vector<string> names;
-    int a = 0;
-    string line;
-
-    if(myfile.is_open()){
-        while(getline (myfile,line)){
-            names.push_back(line);
-        }
-        myfile.close();
-    }
-
-    for(int i=1; i<=2; i++){
-        int tempID = boss.GetEmployeeID()*10;
-        DepartmentH temp((char)(rand()%26+65), names[rand()%61], tempID+i, 150000);
-        boss.addDepartmentH(temp);
-        cout << boss.getDepartmentH()[i-1].GetEmployeeID() << endl;
-        for(int j=1; j<=3; j++){
-            tempID = boss.getDepartmentH()[i-1].GetEmployeeID()*10;
-            boss.getDepartmentH()[i-1].addManager(Manager((char)(rand()%26+65), names[rand()%61], tempID+j, 100000));
-            for(int k=1; k<=5; k++){
-                tempID = boss.getDepartmentH()[i-1].getManagers()[j-1].GetEmployeeID()*10;
-                boss.getDepartmentH()[i-1].getManagers()[j-1].addEmployee(Employee((char)(rand()%26+65), names[rand()%61], tempID+k, 75000));
-            }
-        }
-    }
 }
