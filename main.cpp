@@ -12,14 +12,12 @@
 #include <fstream>
 #include <queue>
 
-void populateTree(CEO boss);
-
 int main(){
     
-    CEO boss('R', "Giovanni", 1, 200000);
+    CEO boss('R', "Giovanni", 1, 200000); 
 
-    ifstream myfile;
-    myfile.open("randLastName.txt");
+    ifstream myfile; 
+    myfile.open("randLastName.txt"); 
     srand(time(NULL));
     vector<string> names;
     int a = 0;
